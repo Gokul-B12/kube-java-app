@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: gokulb12/vprodb:v1
+        image: gokulb12/vprodb:v1       #image from our docker hub repo
         args:
           - "--ignore-db-dir=lost+found"
         ports:
