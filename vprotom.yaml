@@ -21,10 +21,10 @@ spec:
       initContainers:  #this is dummy container ..purpose: we need to initialise tomcat container after db and memcache container got created.. read the cmd u will understand and see what busybox img is.
         - name: init-mydb
           image: busybox
-          command: ["sh", '-c', 'until nslookup vprodb; do echo waiting for mydb; sleep 2; done;']
+          command: ['sh', '-c', 'until nslookup vprodb; do echo waiting for mydb; sleep 2; done;']
         - name: init-memcached
           image: busybox
-          command: ["sh", '-c', 'until nslookup vprocache01; do echo waiting for mydb; sleep 2; done;']
+          command: ['sh', '-c', 'until nslookup vprocache01; do echo waiting for memcache; sleep 2; done;']
           #these initcontaners will be dead once the cmds executes successfully.
           # nslookup vprodb and vprocache01 name is from app prop file
          
